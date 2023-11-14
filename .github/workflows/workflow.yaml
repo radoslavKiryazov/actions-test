@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        example: [..\\..\\test]
+        example: [..\\..\\test\\test.c]
 
     steps:
       - uses: actions/checkout@v3
