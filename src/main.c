@@ -1,7 +1,6 @@
 #include "dirtyword.h"
 #include "ledcontrol.h"
 #include "leds.h"
-#include "periodic_task.h"
 #include "threshold.h"
 #include <avr/interrupt.h>
 #include <stdio.h>
