@@ -23,7 +23,7 @@ jobs:
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
       - name: Test PlatformIO Project
-        run: pio test
+        run: pio test -e windows_test
         env:
           platform: native
           MY_ENV_VAR: windows_test
