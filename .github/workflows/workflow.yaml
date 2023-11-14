@@ -23,3 +23,6 @@ jobs:
           python-version: "3.9"
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
+      - name: Build tests
+        run: |
+          piotest -e native -d test
