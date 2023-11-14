@@ -22,8 +22,8 @@ jobs:
           python-version: "3.9"
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
-      - name: Build PlatformIO Project
-        run: pio run
+      - name: Test PlatformIO Project
+        run: pio test
         env:
           platform: native
           PLATFORMIO_BUILD_FLAGS: -D NATIVE_TEST
