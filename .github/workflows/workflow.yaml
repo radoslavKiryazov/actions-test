@@ -24,6 +24,7 @@ jobs:
         run: pip install --upgrade platformio
       - name: Test PlatformIO Project
         run: pio test
-        env: windows_test
+        env:
           platform: native
+          MY_ENV_VAR: windows_test
           PLATFORMIO_BUILD_FLAGS: -D NATIVE_TEST
