@@ -6,29 +6,29 @@ on:
   pull_request:
     branches: [main] #main
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          example: [..\..\test]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example: [..\..\test]
 
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/cache@v3
-          with:
-            path: |
-              ~/.cache/pip
-              ~/.platformio/.cache
-            key: ${{ runner.os }}-pio
-        - uses: actions/setup-python@v4
-          with:
-            python-version: "3.9"
-        - name: Install PlatformIO Core
-          run: pip install --upgrade platformio
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
 
-        - name: Build PlatformIO examples
-          run: pio ci --board=<ID_1> --board=<ID_2> --board=<ID_N>
-          env:
-            PLATFORMIO_CI_SRC: ${{ matrix.example }}
-            PLATFORMIO_BUILD_FLAGS: -D NATIVE_TEST
+      - name: Build PlatformIO examples
+        run: pio ci --board=<ID_1> --board=<ID_2> --board=<ID_N>
+        env:
+          PLATFORMIO_CI_SRC: ${{ matrix.example }}
+          PLATFORMIO_BUILD_FLAGS: -D NATIVE_TEST
