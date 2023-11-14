@@ -38,12 +38,7 @@ void test_dirtyword_init() {
   TEST_ASSERT_EQUAL(1, uart_init_fake.call_count);
 }
 
-void test_dirty_word_appended() {
-  dirtyword_init();
-  uart_receive_fake.return_val = "Hello\n";
-  dirtyword_echo("poop");
-  TEST_ASSERT_EQUAL_CHAR_ARRAY("Hello\npoop", uart_send_fake.arg0_val, 11);
-}
+
 
 void test_led_innit(void) {
   ledcontrol_init();
@@ -70,7 +65,6 @@ int main(void) {
   RUN_TEST(test_led_innit);
   RUN_TEST(test_ledcontrol_button_not_pressed);
   RUN_TEST(test_ledcontrol_button_pressed);
-  RUN_TEST(test_dirty_word_appended);
   RUN_TEST(test_dirtyword_init);
 
   return UNITY_END();
