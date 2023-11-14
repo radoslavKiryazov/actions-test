@@ -23,4 +23,4 @@ jobs:
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
       - name: Build PlatformIO Project
-        run: pio run
+        run: pio run -D NATIVE_TEST
