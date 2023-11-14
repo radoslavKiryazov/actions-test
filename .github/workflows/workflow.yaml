@@ -28,7 +28,7 @@ jobs:
         run: pip install --upgrade platformio
 
       - name: Build PlatformIO examples
-        run: pio ci --board=atmega2560
+        run: pio ci --board=ATmega2560
         env:
           PLATFORMIO_CI_SRC: ${{ matrix.example }}
           PLATFORMIO_BUILD_FLAGS: -D NATIVE_TEST
