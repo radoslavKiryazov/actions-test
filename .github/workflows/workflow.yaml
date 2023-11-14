@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        example: [..\\..\\test\\test.c]
 
     steps:
       - uses: actions/checkout@v3
